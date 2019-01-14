@@ -1,7 +1,7 @@
 {
   "name": "static-site-boilerplate-ts",
   "version": "1.0.0",
-  "description": "simple front-end template - TypeScript / SCSS / EJS",
+  "description": "simple front-end boilerplate - TypeScript / SCSS / EJS",
   "main": "index.js",
   "author": "sk_rt",
   "license": "MIT",

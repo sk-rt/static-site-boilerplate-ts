@@ -4,11 +4,11 @@ import '../scss/style.scss';
 document.addEventListener(
     'DOMContentLoaded',
     () => {
-        main();
+        main('hello');
     },
     false
 );
 
-const main = (): void => {
-    console.log('hello');
+const main = (message: string): void => {
+    console.log(message);
 };

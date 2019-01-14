@@ -2,17 +2,17 @@
 
 Boilerplate for simple web development, *HTML*, *CSS*, *JavaScript*
 
-- **JavaScript** : webpack + Babel
+- **JavaScript** : webpack + TypeScript
 - **CSS** : scss + PostCss Autoplefixer (build by webpack)
 - **HTML** : EJS
 - **Local Server** : webpack-dev-server
-- **Linter/Formatter**: eslint/prettier
+- **Linter/Formatter**: tslint/prettier
 
 
 ## Setup
 ```bash
-git clone https://github.com/sk-rt/static-site-boilerplate.git
-cd static-site-boilerplate
+git clone https://github.com/sk-rt/static-site-boilerplate-ts.git
+cd static-site-boilerplate-ts
 yarn install  #or npm install
 ```
 
