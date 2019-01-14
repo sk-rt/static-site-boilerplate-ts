@@ -19,6 +19,9 @@ module.exports = {
     target: 'web',
     mode: devMode,
     devtool: sourceMap ? 'inline-source-map' : false,
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js']
+    },
     output: {
         path: outputPath,
         publicPath: publicPath,

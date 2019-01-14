@@ -4,8 +4,12 @@
         "allowSyntheticDefaultImports": true,
         "sourceMap": true,
         "target": "es5",
-        "module": "es6"
+        "module": "es6",
+        "moduleResolution": "node",
     },
     "include": ["src/**/*"],
-    "exclude": ["node_modules"]
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
 }
