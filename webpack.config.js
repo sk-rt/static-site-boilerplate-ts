@@ -34,10 +34,10 @@ module.exports = {
                 test: /\.ts?$/,
                 use: [
                     {
-                        loader: 'tslint-loader',
+                        loader: 'eslint-loader',
                         options: {
-                            typeCheck: true,
-                            fix: true
+                            fix: true,
+                            failOnError: true
                         }
                     }
                 ]
