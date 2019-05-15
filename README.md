@@ -1,12 +1,12 @@
 # static-site-boilerplate
 
-Boilerplate for simple web development, *HTML*, *CSS*, *JavaScript*
+Boilerplate for simple web development 
 
 - **JavaScript** : webpack + TypeScript
 - **CSS** : scss + PostCss Autoplefixer (build by webpack)
 - **HTML** : EJS
 - **Local Server** : webpack-dev-server
-- **Linter/Formatter**: tslint/prettier
+- **Linter/Formatter**: ESLint/prettier
 
 
 ## Setup
