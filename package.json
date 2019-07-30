@@ -16,11 +16,11 @@
     "start": "npm run serve & npm run ejs:watch & npm run cpx:watch",
     "dist": "NODE_ENV=production webpack -p && npm run ejs:prod && npm run cpx:prod",
     "serve": "webpack-dev-server",
-    "ejs:build": "ejs-cli --base-dir src/ejs/ '/**/!(_*).ejs' --out build/ --options src/ejs/config/meta.json",
+    "ejs:build": "ejs-cli --base-dir src/ejs/ \"/**/!(_*).ejs\" --out build/ --options src/ejs/config/meta.json",
     "ejs:watch": "nodemon --watch src/ejs -e ejs -x \"npm run ejs:build \"",
-    "ejs:prod": "ejs-cli --base-dir src/ejs/ '/**/!(_*).ejs' --out dist/  --options src/ejs/config/meta.json",
-    "cpx:watch": "cpx 'src/static/**/!(__*)' build/ --watch --clean",
-    "cpx:prod": "cpx 'src/static/**/!(__*)' dist/ ",
+    "ejs:prod": "ejs-cli --base-dir src/ejs/ \"/**/!(_*).ejs\" --out dist/  --options src/ejs/config/meta.json",
+    "cpx:watch": "cpx \"src/static/**/!(__*)\" build/ --watch --clean",
+    "cpx:prod": "cpx \"src/static/**/!(__*)\" dist/ ",
     "lint:fix": "eslint src/**/*.ts --fix"
   },
   "husky": {
