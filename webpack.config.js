@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const publicPath = '';
+const publicPath = 'assets/';
 let outputPath, devMode, sourceMap;
 if (process.env.NODE_ENV === 'production') {
     outputPath = `${__dirname}/dist/${publicPath}`;
@@ -89,7 +89,6 @@ module.exports = {
         watchContentBase: true,
         open: true,
         host: '0.0.0.0',
-        useLocalIp: true,
-        port: 8080
+        useLocalIp: true
     }
 };

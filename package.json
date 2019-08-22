@@ -13,15 +13,19 @@
     "ios_saf >= 8"
   ],
   "scripts": {
-    "start": "npm run serve & npm run ejs:watch & npm run cpx:watch",
-    "dist": "NODE_ENV=production webpack -p && npm run ejs:prod && npm run cpx:prod",
+    "start": "npm-run-all -p serve watch:*",
+    "dist": "npm-run-all clean-dist dist:*",
     "serve": "webpack-dev-server",
-    "ejs:build": "ejs-cli --base-dir src/ejs/ \"/**/!(_*).ejs\" --out build/ --options src/ejs/config/meta.json",
-    "ejs:watch": "nodemon --watch src/ejs -e ejs -x \"npm run ejs:build \"",
-    "ejs:prod": "ejs-cli --base-dir src/ejs/ \"/**/!(_*).ejs\" --out dist/  --options src/ejs/config/meta.json",
-    "cpx:watch": "cpx \"src/static/**/!(__*)\" build/ --watch --clean",
-    "cpx:prod": "cpx \"src/static/**/!(__*)\" dist/ ",
-    "lint:fix": "eslint src/**/*.ts --fix"
+    "dist:webpack": "NODE_ENV=production webpack -p",
+    "build:webpack": "webpack",
+    "build:ejs": "ejs-cli --base-dir src/ejs/ \"/**/!(_*).ejs\" --out build/ --options src/ejs/env.json",
+    "watch:ejs": "nodemon --watch src/ejs -e ejs -x \"npm run build:ejs \"",
+    "dist:ejs": "ejs-cli --base-dir src/ejs/ \"/**/!(_*).ejs\" --out dist/  --options src/ejs/env.json",
+    "dev:cpx": "cpx \"src/static/**/!(__*)\" build/ ",
+    "watch:cpx": "npm run dev:cpx --watch",
+    "dist:cpx": "cpx \"src/static/**/!(__*)\" dist/ ",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "clean-dist": "rimraf dist"
   },
   "husky": {
     "hooks": {
@@ -35,29 +39,31 @@
     ]
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
+    "@typescript-eslint/eslint-plugin": "2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
     "autoprefixer": "^9.6.1",
     "cpx": "^1.5.0",
-    "css-loader": "^3.1.0",
+    "css-loader": "^3.2.0",
     "ejs-cli": "^2.0.1",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^6.0.0",
+    "eslint": "^6.2.1",
+    "eslint-config-prettier": "^6.1.0",
     "eslint-loader": "^2.2.1",
     "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^3.0.1",
-    "lint-staged": "^9.2.0",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.3",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5",
     "postcss": "^7.0.17",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.18.2",
-    "sass-loader": "^7.1.0",
+    "rimraf": "^3.0.0",
+    "sass-loader": "^7.3.1",
     "ts-loader": "^6.0.4",
     "typescript": "^3.5.3",
-    "webpack": "^4.37.0",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
   }
 }
