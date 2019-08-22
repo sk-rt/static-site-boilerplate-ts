@@ -16,21 +16,20 @@
 
 *****************************************/
 html {
-	font-size: 15px;
-}
-/* ~~~~~ SP ~~~~~~ */
-@media (max-width: $bp_sp ) {
-	html {
-		font-size: 12px;
+	font-size: 16px;
+	@media #{map-get($max, md)} {
+		font-size: 13px;
 	}
 }
+
 body {
 	font-size: 1em;
 	line-height: 1.8;
 	font-weight: 300;
 	font-family: $def_font;
 	letter-spacing: 0.06em;
-	clear: #333333;
+	color: $c_text;
+	background-color: $c_base;
 	-webkit-text-size-adjust: 100%;
 	text-justify: inter-ideograph;
 }

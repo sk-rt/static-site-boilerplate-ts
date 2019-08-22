@@ -16,10 +16,10 @@ var breadCrumbs = [
  %>
 <!DOCTYPE html>
 <html lang="ja">
-<%- include( pageData.dir + 'common/_head',{pageData: pageData}); %>
+<%- include( pageData.dir + '_components/common/_head',{pageData: pageData}); %>
 <body>
-<%- include( pageData.dir + 'common/_header',{pageData: pageData}); %>
-<%- include( pageData.dir + 'components/_breadcrumbs',{pageData: pageData,breadCrumbs:breadCrumbs}); %>
+<%- include( pageData.dir + '_components/common/_header',{pageData: pageData}); %>
+<%- include( pageData.dir + '_components/common/_breadcrumbs',{pageData: pageData,breadCrumbs:breadCrumbs}); %>
 
 <main role="main" class="l-main">
 
@@ -28,6 +28,6 @@ var breadCrumbs = [
 	</h2>
 
 </main>
-<%- include( pageData.dir + 'common/_footer',{pageData: pageData}); %>
+<%- include( pageData.dir + '_components/common/_footer',{pageData: pageData}); %>
 </body>
 </html>
