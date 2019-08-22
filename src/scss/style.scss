@@ -22,6 +22,15 @@
 
 
  /* ====================================================
-          components
+          project
  */
  @import 'object/project/index';
+
+  /* ====================================================
+          Utils
+ */
+ @import 'object/utility/layout';
+ @import 'object/utility/font';
+ @import 'object/utility/grid';
+
+
