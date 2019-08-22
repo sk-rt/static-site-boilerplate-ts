@@ -21,9 +21,9 @@
     "build:ejs": "ejs-cli --base-dir src/ejs/ \"/**/!(_*).ejs\" --out build/ --options src/ejs/env.json",
     "watch:ejs": "nodemon --watch src/ejs -e ejs -x \"npm run build:ejs \"",
     "dist:ejs": "ejs-cli --base-dir src/ejs/ \"/**/!(_*).ejs\" --out dist/  --options src/ejs/env.json",
-    "dev:cpx": "cpx \"src/static/**/!(__*)\" build/ ",
+    "dev:cpx": "cpx \"src/static/**/!(__*)\" build/assets/ ",
     "watch:cpx": "npm run dev:cpx --watch",
-    "dist:cpx": "cpx \"src/static/**/!(__*)\" dist/ ",
+    "dist:cpx": "cpx \"src/static/**/!(__*)\" dist/assets/ ",
     "lint:fix": "eslint src/**/*.ts --fix",
     "clean-dist": "rimraf dist"
   },
