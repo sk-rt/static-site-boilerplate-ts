@@ -1,0 +1,19 @@
+
+<%
+if(!pageData) {
+    return;
+}
+const utils = {
+    getRootUrl(path = ""){
+        return ROOT_URL + ROOT_DIR + path;
+    },
+    getCurrentUrl(){
+        const rootLocation = ROOT_URL + ROOT_DIR;
+        return rootLocation + pageData.path;
+    },
+    getTitle(){
+        return pageData.title ?  pageData.title + ' | ' + SITE_NAME: SITE_NAME;
+    }
+}
+return utils;
+ %>

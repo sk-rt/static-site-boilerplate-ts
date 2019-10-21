@@ -1,12 +1,13 @@
 <%
 // デフォルトを設定 - env.jsonとマージ
-const ogimage = pageData.ogimage || ROOT_URL + "/assets/images/ogp.png";
-const title = pageData.title ?  pageData.title + ' | ' + SITE_NAME: SITE_NAME;
-const currentUrl = ROOT_URL + '/' + pageData.path;
+const utils = include( './_utils',{pageData: pageData}); 
+const rootUrl = utils.getRootUrl();
+const title = utils.getTitle();
+const currentUrl = utils.getCurrentUrl();
+const ogimage =  rootUrl + (pageData.ogimage || ASSETS_PATH + "images/ogp.png");
 const keywords = pageData.keywords || KEYWORDS;
 const description = pageData.description || DESCRIPTION;
-%>
-<head>
+%><head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta charset="UTF-8">
 <title><%= title %></title>
@@ -20,6 +21,7 @@ const description = pageData.description || DESCRIPTION;
 <meta property="og:site_name" content="<%= SITE_NAME %>">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="<%= title %>">
-<link rel="stylesheet" href="<%= pageData.dir %>assets/css/style.css?v=<%= Date.now() %>">
-<script type="text/javascript" src="<%= pageData.dir %>assets/js/main.js?v=<%= Date.now() %>" defer></script>
+<link rel="canonical" href="<%= currentUrl; %>">
+<link rel="stylesheet" href="<%= pageData.dir + ASSETS_PATH %>css/style.css?v=<%= Date.now() %>">
+<script type="text/javascript" src="<%= pageData.dir + ASSETS_PATH %>js/main.js?v=<%= Date.now() %>" defer></script>
 </head>
