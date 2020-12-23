@@ -1,24 +1,21 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const environment = process.env.NODE_ENV || 'development';
+const isDevelopment = environment === 'development';
 const publicPath = '/assets/';
-const sourceMap = environment === 'development';
 
 module.exports = {
   entry: {
     main: `${__dirname}/src/js/main.ts`,
   },
   target: 'web',
-  mode: environment === 'development' ? environment : 'production',
-  devtool: sourceMap ? 'inline-source-map' : false,
+  mode: isDevelopment ? environment : 'production',
+  devtool: isDevelopment ? 'inline-source-map' : false,
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
   },
   output: {
-    path:
-      environment === 'development'
-        ? `${__dirname}/dist/${publicPath}`
-        : `${__dirname}/build/${publicPath}`,
+    path: isDevelopment ? `${__dirname}/public${publicPath}` : `${__dirname}/dist${publicPath}`,
     publicPath: publicPath,
     filename: 'js/[name].js',
   },
@@ -49,7 +46,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: sourceMap,
+              sourceMap: isDevelopment,
               url: false,
               importLoaders: 2,
             },
@@ -57,7 +54,7 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              sourceMap: sourceMap,
+              sourceMap: isDevelopment,
               postcssOptions: {
                 plugins: [require('autoprefixer')],
               },
@@ -66,7 +63,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: sourceMap,
+              sourceMap: isDevelopment,
             },
           },
         ],
@@ -82,11 +79,12 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: `${__dirname}/build`,
+    contentBase: `${__dirname}/public`,
+    publicPath: publicPath,
     watchContentBase: true,
     open: true,
     host: '0.0.0.0',
     useLocalIp: true,
-    port: 8090,
+    port: 8080,
   },
 };
