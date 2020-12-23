@@ -18,7 +18,7 @@ yarn install  #or npm install
 
 ## Development
 ```bash
-yarn start
+yarn dev
 ```
 and open `http://localhost:8080/`
 

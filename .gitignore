@@ -1,11 +1,11 @@
 node_modules
 .sass-cache
 .idea
-.vscode
 .DS_Store
 
 # Directory
-build
+public/*
+!.gitkeep
 dist
 
 # Logs

@@ -16,41 +16,41 @@
 
 *****************************************/
 html {
-    font-size: 16px;
-    @media #{map-get($max, md)} {
-        font-size: 13px;
-    }
+  font-size: 16px;
+  @media #{map-get($max, md)} {
+    font-size: 13px;
+  }
 }
 
 body {
-    font-size: 1em;
-    line-height: 1.8;
-    font-weight: 400;
-    font-family: $def_font;
-    letter-spacing: 0.06em;
-    color: $c_text;
-    background-color: $c_base;
-    -webkit-text-size-adjust: 100%;
-    text-justify: inter-ideograph;
-    -moz-font-feature-settings: 'palt';
-    -webkit-font-feature-settings: 'palt';
-    font-feature-settings: 'palt';
-    overflow-wrap: break-word;
+  font-size: 1em;
+  line-height: 1.8;
+  font-weight: 400;
+  font-family: $def_font;
+  letter-spacing: 0.06em;
+  color: $c_text;
+  background-color: $c_base;
+  -webkit-text-size-adjust: 100%;
+  text-justify: inter-ideograph;
+  -moz-font-feature-settings: 'palt';
+  -webkit-font-feature-settings: 'palt';
+  font-feature-settings: 'palt';
+  overflow-wrap: break-word;
 }
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 svg {
-    max-width: 100%;
+  max-width: 100%;
 }
 .safari,
 .chrome,
 .firefox,
 .chrome-mobile {
-    svg {
-        height: auto;
-    }
+  svg {
+    height: auto;
+  }
 }
 b,
 strong,
@@ -60,22 +60,22 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: 1.5;
-    font-weight: 600;
+  line-height: 1.5;
+  font-weight: 600;
 }
 button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-    -webkit-appearance: none;
-    appearance: none;
-    font-family: $def_font;
-    box-sizing: content-box;
-    font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  font-family: $def_font;
+  box-sizing: content-box;
+  font-size: 1rem;
 }
 a {
-    text-decoration: inherit;
-    color: inherit;
+  text-decoration: inherit;
+  color: inherit;
 }
