@@ -14,35 +14,35 @@ Font Utils
     Font large / small
 */
 .u-larger {
-    font-size: 1.15em;
+  font-size: 1.15em;
 }
 .u-smaller {
-    font-size: 0.85em;
+  font-size: 0.85em;
 }
 /* -----------------------------
     Align
 */
 .u-align--center {
-    text-align: center;
+  text-align: center;
 }
 .u-align--right {
-    text-align: right;
+  text-align: right;
 }
 .u-align--justify {
-    text-align: justify;
+  text-align: justify;
 }
 .u-max-md-align--left {
-    @media #{map-get($max, md)} {
-        text-align: left;
-    }
+  @media #{map-get($max, md)} {
+    text-align: left;
+  }
 }
 .u-max-md-align--right {
-    @media #{map-get($max, md)} {
-        text-align: right;
-    }
+  @media #{map-get($max, md)} {
+    text-align: right;
+  }
 }
 .u-max-md-align--center {
-    @media #{map-get($max, md)} {
-        text-align: center;
-    }
+  @media #{map-get($max, md)} {
+    text-align: center;
+  }
 }

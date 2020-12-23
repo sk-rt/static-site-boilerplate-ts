@@ -17,20 +17,17 @@
 /* ====================================================
           components
  */
- @import 'object/component/heading';
- @import 'object/component/breadcrumbs';
+@import 'object/component/heading';
+@import 'object/component/breadcrumbs';
 
-
- /* ====================================================
+/* ====================================================
           project
  */
- @import 'object/project/index';
+@import 'object/project/index';
 
-  /* ====================================================
+/* ====================================================
           Utils
  */
- @import 'object/utility/layout';
- @import 'object/utility/font';
- @import 'object/utility/grid';
-
-
+@import 'object/utility/layout';
+@import 'object/utility/font';
+@import 'object/utility/grid';
