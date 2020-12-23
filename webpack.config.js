@@ -1,31 +1,26 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const environment = process.env.NODE_ENV || 'development';
+const publicPath = '/assets/';
+const sourceMap = environment === 'development';
 
-const publicPath = 'assets/';
-let outputPath, devMode, sourceMap;
-if (process.env.NODE_ENV === 'production') {
-    outputPath = `${__dirname}/dist/${publicPath}`;
-    devMode = 'production';
-    sourceMap = false;
-} else {
-    outputPath = `${__dirname}/build/${publicPath}`;
-    devMode = 'development';
-    sourceMap = true;
-}
 module.exports = {
     entry: {
-        main: `${__dirname}/src/js/main.ts`
+        main: `${__dirname}/src/js/main.ts`,
     },
     target: 'web',
-    mode: devMode,
+    mode: environment === 'development' ? environment : 'production',
     devtool: sourceMap ? 'inline-source-map' : false,
     resolve: {
-        extensions: ['.ts', '.tsx', '.js']
+        extensions: ['.ts', '.tsx', '.js'],
     },
     output: {
-        path: outputPath,
+        path:
+            environment === 'development'
+                ? `${__dirname}/dist/${publicPath}`
+                : `${__dirname}/build/${publicPath}`,
         publicPath: publicPath,
-        filename: 'js/[name].js'
+        filename: 'js/[name].js',
     },
     module: {
         rules: [
@@ -37,15 +32,15 @@ module.exports = {
                         loader: 'eslint-loader',
                         options: {
                             fix: true,
-                            failOnError: true
-                        }
-                    }
-                ]
+                            failOnError: true,
+                        },
+                    },
+                ],
             },
             {
                 test: /\.ts$/,
                 use: 'ts-loader',
-                exclude: /node_modules/
+                exclude: /node_modules/,
             },
             {
                 test: /\.(sa|sc|c)ss$/,
@@ -56,39 +51,42 @@ module.exports = {
                         options: {
                             sourceMap: sourceMap,
                             url: false,
-                            importLoaders: 2
-                        }
+                            importLoaders: 2,
+                        },
                     },
                     {
                         loader: 'postcss-loader',
                         options: {
                             sourceMap: sourceMap,
-                            plugins: [require('autoprefixer')]
-                        }
+                            postcssOptions: {
+                                plugins: [require('autoprefixer')],
+                            },
+                        },
                     },
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: sourceMap
-                        }
-                    }
-                ]
-            }
-        ]
+                            sourceMap: sourceMap,
+                        },
+                    },
+                ],
+            },
+        ],
     },
     plugins: [
         new webpack.DefinePlugin({
-            ENV: JSON.stringify(devMode)
+            ENV: JSON.stringify(environment),
         }),
         new MiniCssExtractPlugin({
-            filename: 'css/style.css'
-        })
+            filename: 'css/style.css',
+        }),
     ],
     devServer: {
         contentBase: `${__dirname}/build`,
         watchContentBase: true,
         open: true,
         host: '0.0.0.0',
-        useLocalIp: true
-    }
+        useLocalIp: true,
+        port: 8090,
+    },
 };
