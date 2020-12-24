@@ -6,12 +6,6 @@
   "author": "sk_rt",
   "license": "MIT",
   "private": true,
-  "browserslist": [
-    "last 2 versions",
-    "ie >= 10",
-    "Android >= 4.4",
-    "ios_saf >= 8"
-  ],
   "scripts": {
     "dev": "npm-run-all -p serve watch:*",
     "dist": "npm-run-all clean-dist dist:*",
