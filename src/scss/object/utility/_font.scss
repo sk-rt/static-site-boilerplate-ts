@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../../foundation/variables";
+
 /*********************************************************
 
 
@@ -32,17 +35,17 @@ Font Utils
   text-align: justify;
 }
 .u-max-md-align--left {
-  @media #{map-get($max, md)} {
+  @media #{map.get(variables.$max, md)} {
     text-align: left;
   }
 }
 .u-max-md-align--right {
-  @media #{map-get($max, md)} {
+  @media #{map.get(variables.$max, md)} {
     text-align: right;
   }
 }
 .u-max-md-align--center {
-  @media #{map-get($max, md)} {
+  @media #{map.get(variables.$max, md)} {
     text-align: center;
   }
 }

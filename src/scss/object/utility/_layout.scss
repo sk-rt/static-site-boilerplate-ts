@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../../foundation/variables";
+
 /*********************************************************
 
 
@@ -11,11 +14,11 @@
           Container
 
 *****************************************/
-@each $key in map-keys($content_size) {
+@each $key in map.keys(variables.$content_size) {
   .u-container--#{$key} {
     margin-left: auto;
     margin-right: auto;
-    max-width: #{map-get($content_size, #{$key})};
+    max-width: #{map.get(variables.$content_size, #{$key})};
   }
 }
 
@@ -25,21 +28,21 @@
 
 *****************************************/
 .u-gutter--lg {
-  padding-left: $gutter_lg;
-  padding-right: $gutter_lg;
+  padding-left: variables.$gutter_lg;
+  padding-right: variables.$gutter_lg;
 }
 .u-gutter--sm {
-  padding-left: $gutter_sm;
-  padding-right: $gutter_sm;
+  padding-left: variables.$gutter_sm;
+  padding-right: variables.$gutter_sm;
 }
-@media #{map-get($max, md)} {
+@media #{map.get(variables.$max, md)} {
   .u-gutter--lg {
-    padding-left: $gutter_liquid_lg;
-    padding-right: $gutter_liquid_lg;
+    padding-left: variables.$gutter_liquid_lg;
+    padding-right: variables.$gutter_liquid_lg;
   }
   .u-gutter--sm {
-    padding-left: $gutter_liquid_sm;
-    padding-right: $gutter_liquid_sm;
+    padding-left: variables.$gutter_liquid_sm;
+    padding-right: variables.$gutter_liquid_sm;
   }
 }
 /****************************************
@@ -50,7 +53,7 @@
 .u-only--sp {
   display: none;
 }
-@media #{map-get($max, md)} {
+@media #{map.get(variables.$max, md)} {
   .u-only--sp {
     display: block;
   }
@@ -66,18 +69,18 @@
           u-only--max-sm
 
 *****************************************/
-@each $key in map-keys($min) {
+@each $key in map.keys(variables.$min) {
   .u-only--min-#{$key} {
     display: none;
-    @media #{ map-get($min, #{$key})} {
+    @media #{ map.get(variables.$min, #{$key})} {
       display: block;
     }
   }
 }
-@each $key in map-keys($max) {
+@each $key in map.keys(variables.$max) {
   .u-only--max-#{$key} {
     display: none;
-    @media #{ map-get($max, #{$key})} {
+    @media #{ map.get(variables.$max, #{$key})} {
       display: block;
     }
   }
