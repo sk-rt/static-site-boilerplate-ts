@@ -2,32 +2,36 @@
 /* ====================================================
           foundation
  */
-@import 'foundation/reset';
-@import 'foundation/variables';
-@import 'foundation/mixins';
-@import 'foundation/general';
+@use 'foundation/reset';
+@use 'foundation/variables';
+@use 'foundation/mixins';
+@use 'foundation/general';
 
 /* ====================================================
           layout
  */
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/main';
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/main';
 
 /* ====================================================
           components
  */
-@import 'object/component/heading';
-@import 'object/component/breadcrumbs';
+@use 'object/component/heading';
+@use 'object/component/icon';
+@use 'object/component/button';
+@use 'object/component/list';
+@use 'object/component/table';
+@use 'object/component/breadcrumbs';
 
 /* ====================================================
           project
  */
-@import 'object/project/index';
+@use 'object/project/index';
 
 /* ====================================================
           Utils
  */
-@import 'object/utility/layout';
-@import 'object/utility/font';
-@import 'object/utility/grid';
+@use 'object/utility/layout';
+@use 'object/utility/font';
+@use 'object/utility/grid';

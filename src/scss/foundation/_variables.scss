@@ -1,3 +1,4 @@
+@use "sass:map";
 /* -----------------------
 Font
 ----------------------- */
@@ -23,17 +24,17 @@ $bp_map: (
 ) !default;
 
 $min: (
-  sm: '(min-width:' map-get($bp_map, sm) ')',
-  md: '(min-width:' map-get($bp_map, md) ')',
-  lg: '(min-width:' map-get($bp_map, lg) ')',
-  xl: '(min-width:' map-get($bp_map, xl) ')',
+  sm: '(min-width:' map.get($bp_map, sm) ')',
+  md: '(min-width:' map.get($bp_map, md) ')',
+  lg: '(min-width:' map.get($bp_map, lg) ')',
+  xl: '(min-width:' map.get($bp_map, xl) ')',
 );
 
 $max: (
-  sm: '(max-width:' map-get($bp_map, sm) - 0.2 ')',
-  md: '(max-width:' map-get($bp_map, md) - 0.2 ')',
-  lg: '(max-width:' map-get($bp_map, lg) - 0.2 ')',
-  xl: '(max-width:' map-get($bp_map, xl) - 0.2 ')',
+  sm: '(max-width:' map.get($bp_map, sm) - 0.2 ')',
+  md: '(max-width:' map.get($bp_map, md) - 0.2 ')',
+  lg: '(max-width:' map.get($bp_map, lg) - 0.2 ')',
+  xl: '(max-width:' map.get($bp_map, xl) - 0.2 ')',
 );
 
 /* -----------------------
